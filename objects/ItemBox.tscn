@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/ItemBox.gd" type="Script" id=1]
+
+[node name="ItemBox" type="ColorRect"]
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 24.0
+margin_bottom = 24.0
+mouse_filter = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 24, 24 )
+z_index = 1
+
+[connection signal="gui_input" from="." to="." method="_on_ItemBox_gui_input"]
