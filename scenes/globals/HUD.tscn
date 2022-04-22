@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/themes/button_pressed.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/fonts/Montserrat-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/themes/button.tres" type="StyleBox" id=4]
-[ext_resource path="res://HUD.gd" type="Script" id=5]
+[ext_resource path="res://scenes/globals/HUD.gd" type="Script" id=5]
 [ext_resource path="res://objects/ItemBox.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=3]

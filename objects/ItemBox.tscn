@@ -2,7 +2,7 @@
 
 [ext_resource path="res://objects/ItemBox.gd" type="Script" id=1]
 
-[node name="ItemBox" type="ColorRect"]
+[node name="ItemBox" type="ColorRect" groups=["ItemBox"]]
 margin_left = -24.0
 margin_top = -24.0
 margin_right = 24.0

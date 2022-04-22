@@ -11,13 +11,13 @@ config_version=4
 [application]
 
 config/name="Village"
-run/main_scene="res://HUD.tscn"
+run/main_scene="res://scenes/globals/HUD.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Global.tscn"
-MasterItem="*res://Master_Item.gd"
+Global="*res://scenes/globals/Global.tscn"
+MasterItem="*res://scenes/globals/Master_Item.gd"
 
 [display]
 
