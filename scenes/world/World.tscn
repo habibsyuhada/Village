@@ -16,8 +16,10 @@ far = 200.0
 [node name="Indicator" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34341, 0, 0.5 )
 
-[node name="Spatial" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0.5 )
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.498096, 0.0194597, 0.503098 )
+
+[node name="Dynamic_Node" type="Spatial" parent="."]
+
+[node name="Spatial" parent="Dynamic_Node" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0.5 )

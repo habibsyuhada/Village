@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://objects/ItemBox.gd" type="Script" id=1]
+[ext_resource path="res://assets/themes/Label_Inv.tres" type="Theme" id=2]
 
 [node name="ItemBox" type="ColorRect" groups=["ItemBox"]]
 margin_left = -24.0
@@ -16,5 +17,18 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 24, 24 )
 z_index = 1
+
+[node name="Label" type="Label" parent="Sprite"]
+margin_left = -73.0
+margin_top = 8.0
+margin_right = 24.0
+margin_bottom = 24.0
+theme = ExtResource( 2 )
+align = 2
+autowrap = true
+percent_visible = -0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="gui_input" from="." to="." method="_on_ItemBox_gui_input"]
