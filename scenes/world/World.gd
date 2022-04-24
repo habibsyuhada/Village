@@ -24,6 +24,7 @@ func char_vel_moved(player_velocity):
 	
 	indicator_position.x = (ceil(player_position.x / indicator_tile) - 0.5) * indicator_tile
 	indicator_position.z = (ceil(player_position.z / indicator_tile) - 0.5) * indicator_tile
+	indicator_position.y = (ceil(player_position.y / indicator_tile)) * indicator_tile
 	if player_velocity.x > 0 :
 		indicator_position.x = (ceil(player_position.x / indicator_tile) + 0.5) * indicator_tile
 	elif player_velocity.x < 0 :

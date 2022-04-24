@@ -5,7 +5,8 @@ extends KinematicBody
 # var a = 2
 # var b = "text"
 var velocity = Vector3.ZERO
-var speed = 750
+var speed = 500
+var gravity = 100
 
 var isholdsomething = false
 var hold_node = null
@@ -22,8 +23,10 @@ func _ready():
 func _physics_process(delta):
 	if !isinaction :
 		get_input_move()
+		if !is_on_floor():
+			velocity.y -= gravity *delta
 		move_and_slide(velocity * delta * speed)
-		if velocity != Vector3.ZERO :
+		if velocity.x != 0 or velocity.z != 0 :
 			$AnimatedCharacter/AnimationPlayer.play("Run")
 			emit_signal("char_vel_moved", velocity)
 		else:

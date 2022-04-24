@@ -1,25 +1,37 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Indicator.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/Cube_Test.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/world/World.gd" type="Script" id=4]
+[ext_resource path="res://objects/MeshLibrary.tres" type="MeshLibrary" id=5]
 
 [node name="World" type="Spatial"]
 script = ExtResource( 4 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 1.13266, 20.555, 33.3211 )
-fov = 30.0
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 5.16946, 14.2836, 16.0617 )
 far = 200.0
 
 [node name="Indicator" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34341, 0, 0.5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.498096, 0.0194597, 0.503098 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67653, 2.81187, 7.46173 )
 
 [node name="Dynamic_Node" type="Spatial" parent="."]
 
 [node name="Spatial" parent="Dynamic_Node" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 1, 2.5 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5.76713, 0 )
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 5 )
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0
+}
