@@ -1,14 +1,18 @@
 extends Node
 
+var player = {
+	"item_index_used" : 1,
+}
 var inventory = {}
 var save_path = "user://file2.save"
 
 func _ready():
-	var file = File.new()
-	if file.file_exists(save_path):
-		load_data()
-	else:
-		first_setup()
+	first_setup()
+	#var file = File.new()
+	#if file.file_exists(save_path):
+		#load_data()
+	#else:
+		#first_setup()
 	
 func first_setup():
 	for i in 18:
@@ -47,6 +51,7 @@ func save_data():
 		# Call the node's save function.
 		var node_data = node.call("save")
 		save_file["dynamic_node"].push_back(node_data)
+	
 	var file = File.new()
 	file.open(save_path, File.WRITE)
 	file.store_var(save_file)
@@ -78,6 +83,10 @@ func load_data():
 			# Now we set the remaining variables.
 			for i in node_data.keys():
 				if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
+					continue
+				if i == "grid_cells":
+					for cell in node_data[i]:
+						new_object.set_cell_item(cell["cell_pos"].x, cell["cell_pos"].y, cell["cell_pos"].z, cell["cell_item"])
 					continue
 				new_object.set(i, node_data[i])
 		

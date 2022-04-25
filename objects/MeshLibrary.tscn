@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/tiles/BrownDark.material" type="Material" id=1]
 [ext_resource path="res://assets/tiles/Green.material" type="Material" id=2]
@@ -31,6 +31,9 @@ surfaces/1 = {
 "skeleton_aabb": [  ],
 "vertex_count": 20
 }
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.5, 0.5, 0.5 )
 
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "Tile_Dirt_Cube003"
@@ -117,14 +120,32 @@ mesh = SubResource( 2 )
 material/0 = null
 material/1 = null
 
+[node name="StaticBody" type="StaticBody" parent="Tile_Grass"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Tile_Grass/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 4 )
+
 [node name="Tile_Dirt" type="MeshInstance" parent="."]
 mesh = SubResource( 3 )
 material/0 = null
 material/1 = null
 material/2 = null
 
+[node name="StaticBody" type="StaticBody" parent="Tile_Dirt"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Tile_Dirt/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 4 )
+
 [node name="Tile_Wet_Dirt" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 material/0 = null
 material/1 = null
 material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="Tile_Wet_Dirt"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Tile_Wet_Dirt/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 4 )

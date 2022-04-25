@@ -24,4 +24,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Quick_Access_Item" type="Control" parent="."]
+anchor_left = 0.35
+anchor_top = 0.878
+anchor_right = 0.65
+anchor_bottom = 1.0
+margin_left = -8.00003
+margin_top = 7.83997
+margin_right = 7.99994
+rect_pivot_offset = Vector2( 280, -56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="button_up" from="Menu_Button" to="." method="_on_Menu_Button_button_up"]

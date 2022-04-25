@@ -9,7 +9,8 @@ var indicator_tile = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Player.connect("char_vel_moved", self, "char_vel_moved")
-
+	$Camera.add_target($Player)
+	$Camera.isfollowtarget = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
