@@ -10,7 +10,7 @@ size = Vector3( 1, 1, 1 )
 vertex_color_use_as_albedo = true
 albedo_color = Color( 0.878431, 0.713726, 0.0392157, 1 )
 
-[node name="Chest" type="KinematicBody"]
+[node name="Chest" type="KinematicBody" groups=["Saved Object"]]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )

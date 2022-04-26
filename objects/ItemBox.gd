@@ -4,6 +4,7 @@ var item_id = null
 var item_qty = 0
 
 var itembox_index = 0
+var category = "Invetory"
 
 var can_drag = false
 var grabbed_offset = Vector2()
@@ -41,17 +42,30 @@ func _on_ItemBox_gui_input(event):
 				item_qty = closest_itembox.item_qty
 				closest_itembox.item_qty = old_item_qty
 				
-				Global.update_invetory({
-					"key": itembox_index,
-					"item_id": item_id,
-					"item_qty": item_qty,
-				})
-				
-				Global.update_invetory({
-					"key": closest_itembox.itembox_index,
-					"item_id": closest_itembox.item_id,
-					"item_qty": closest_itembox.item_qty,
-				})
+				if category == "Invetory" :
+					Global.update_invetory({
+						"key": itembox_index,
+						"item_id": item_id,
+						"item_qty": item_qty,
+					})
+				elif category == "Storage" :
+					GUI.update_storage({
+						"key": itembox_index,
+						"item_id": item_id,
+						"item_qty": item_qty,
+					})
+				if closest_itembox.category == "Invetory" :
+					Global.update_invetory({
+						"key": closest_itembox.itembox_index,
+						"item_id": closest_itembox.item_id,
+						"item_qty": closest_itembox.item_qty,
+					})
+				elif closest_itembox.category == "Storage" :
+					GUI.update_storage({
+						"key": closest_itembox.itembox_index,
+						"item_id": closest_itembox.item_id,
+						"item_qty": closest_itembox.item_qty,
+					})
 			$Sprite.position = default_position
 
 func _process(delta):

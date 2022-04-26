@@ -8,6 +8,7 @@ margin_left = -24.0
 margin_top = -24.0
 margin_right = 24.0
 margin_bottom = 24.0
+rect_min_size = Vector2( 48, 48 )
 mouse_filter = 1
 script = ExtResource( 1 )
 __meta__ = {
